@@ -1,0 +1,25 @@
+package webElementInterrogationMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GetTextAndTag {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.selenium.dev/");
+		Thread.sleep(2000);
+		
+		//Locating about link
+		WebElement aboutLink = driver.findElement(By.id("navbarDropdown"));
+		System.out.println("Name of my link is : "+aboutLink.getText());
+		
+		//Fetching the tagname
+		System.out.println("The tagname is : "+aboutLink.getTagName());
+
+	}
+
+}
